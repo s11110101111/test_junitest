@@ -9,7 +9,7 @@ public class MainTestEnum {
         System.out.println(TestEnum.TEST1.ordinal());
         System.out.println(ts.action(a,b));
 
-        System.out.println(Integer.toBinaryString(a));
+        System.out.println(ColorANSI.YELLOW.fillColor(Integer.toBinaryString(a)));
         System.out.println(Integer.toBinaryString(b));
         System.out.println("----    ----    ----");
         System.out.println(Integer.toBinaryString(TestEnum.Test3.action(a,b)));
