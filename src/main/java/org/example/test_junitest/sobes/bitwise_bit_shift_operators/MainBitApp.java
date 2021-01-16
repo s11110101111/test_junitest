@@ -13,12 +13,15 @@ public class MainBitApp {
 //                "Sign -1,0,1 " + Integer.signum(a);
 //        System.out.println(str);
         */
-      int a = new String("color").hashCode();
 
-        System.out.println(ColorANSI.YELLOW.fillColor(BitUtils.intBinaryToString(a)));
 
+      int a = new String("color").hashCode()>>16;
+        System.out.println(ColorANSI.YELLOW.fillColor(BitUtils.intBinaryToString(a))+ " // "+ a);
         int b = a>>>16;
-        System.out.println(ColorANSI.YELLOW.fillColor(BitUtils.intBinaryToString(b)));
+        System.out.println(ColorANSI.YELLOW.fillColor(BitUtils.intBinaryToString(b))+ " // "+ b);
+        int size =16;
+        int indexTab = (size-1)&b;
+        System.out.println(ColorANSI.YELLOW.fillColor(BitUtils.intBinaryToString(indexTab)) + " // "+ indexTab);
     }
 
 

@@ -3,11 +3,10 @@ package org.example.test_junitest.sobes.colections_maps;
 import org.example.test_junitest.sobes.bitwise_bit_shift_operators.BitUtils;
 import org.example.test_junitest.sobes.enum_test.ColorANSI;
 
+import java.util.Enumeration;
 import java.util.Objects;
 
-public class Hash_Map<K, V> {
-
-
+public class Hash_Map <K, V> {
     static class Node<K, V> {
         int hash;
         K key;
