@@ -6,7 +6,9 @@ public class MainParallel {
     private static int count = 0;
 
     public static void main(String[] args) {
+        //test1();
         test2();
+
     }
 
     public static void test1() {
@@ -31,11 +33,18 @@ public class MainParallel {
 
         thr.start();
         thr1.start();
+        try {
+            thr.join();
+            thr1.join();
 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void test2() {
-        StringBuilder stb = new StringBuilder();
+        //StringBuilder stb = new StringBuilder();
+        StringBuffer stb = new StringBuffer();
         Runnable rnb = new Runnable() {
             @Override
             public void run() {
