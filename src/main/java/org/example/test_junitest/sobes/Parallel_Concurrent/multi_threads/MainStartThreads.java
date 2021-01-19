@@ -26,6 +26,9 @@ Runnable t = ()->{
 
 
 };
+
+        ThreadMain thrd4 = new ThreadMain();
+        thrd4.setName("ARGGGGGGGUSSSssssssssssssss");
         for (int i = 0; i <10 ; i++) {
             //1
             new Thread(()-> a=4).start();
@@ -36,10 +39,13 @@ Runnable t = ()->{
             //3
             Thread thrd3 = new Thread(t,"Fn-"+i);
                 thrd3.start();
+
             //4
                 Thread thrd2 = new Thread(new ThreadMain2());
                 thrd2.setPriority(10-i);
                 thrd2.start();
+                //5
+            new Thread(thrd4,"OGOGO-"+i).start();
         }
 
 
