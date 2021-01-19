@@ -27,12 +27,17 @@ Runnable t = ()->{
 
 };
         for (int i = 0; i <10 ; i++) {
-            ThreadMain thrd = new ThreadMain();
+            //1
+            new Thread(()-> a=4).start();
+            //2
+             ThreadMain thrd = new ThreadMain();
            thrd.setPriority(1+i);
             thrd.start();
+            //3
             Thread thrd3 = new Thread(t,"Fn-"+i);
                 thrd3.start();
-            Thread thrd2 = new Thread(new ThreadMain2());
+            //4
+                Thread thrd2 = new Thread(new ThreadMain2());
                 thrd2.setPriority(10-i);
                 thrd2.start();
         }
