@@ -8,11 +8,30 @@ public class MainStartThreads {
     public static void main(String[] args) {
         Thread thrdMain = Thread.currentThread();
         System.out.println(thrdMain);
+Runnable t = ()->{
+    a=22;
+    try {
+        Thread.sleep(0);
+        System.out.println( "hello thread 2 "+ ColorANSI.BLUE.fillColor(Thread.currentThread().getName()
+                +"\n Priority "+Thread.currentThread().getPriority()+""
+                +"\n is interupted "+Thread.currentThread().isInterrupted()
+                +"\n is id "+Thread.currentThread().getId()
+                +"\n is  state "+Thread.currentThread().getState() +"=="+a
+        ));
 
+    } catch (InterruptedException e) {
+        System.out.println(" it thread is interrupted");
+        e.printStackTrace();
+    }
+
+
+};
         for (int i = 0; i <10 ; i++) {
             ThreadMain thrd = new ThreadMain();
            thrd.setPriority(1+i);
             thrd.start();
+            Thread thrd3 = new Thread(t,"Fn-"+i);
+                thrd3.start();
             Thread thrd2 = new Thread(new ThreadMain2());
                 thrd2.setPriority(10-i);
                 thrd2.start();
