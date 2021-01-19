@@ -6,7 +6,7 @@ import java.util.List;
 public class SequenceGenerator2 {
 
     private static int counter = 0;
-
+//  its good work
     public static synchronized int nextInt() {
         return counter++;
     }
