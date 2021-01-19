@@ -9,7 +9,7 @@ public class Demo {
 
         new DepositThread(account).start();
 
-        account.waitAndWithdraw(50000000);
+        account.waitAndWithdraw(50_000_000);
 
         System.out.println("waitAndWithdraw finished, end balance = " + account.getBalance());
     }
@@ -25,7 +25,7 @@ public class Demo {
 
         @Override
         public void run() {
-            for (int i = 0; i < 60000000; ++i) {
+            for (int i = 0; i < 60_000_000; ++i) {
                 account.deposit(1);
             }
         }

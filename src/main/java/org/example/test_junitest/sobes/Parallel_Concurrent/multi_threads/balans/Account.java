@@ -1,5 +1,7 @@
 package org.example.test_junitest.sobes.Parallel_Concurrent.multi_threads.balans;
 
+import org.example.test_junitest.sobes.enum_test.ColorANSI;
+
 public class Account {
 
     private long balance;
@@ -33,7 +35,8 @@ public class Account {
     public synchronized void waitAndWithdraw(long amount) throws InterruptedException {
         checkAmountNonNegative(amount);
         while (balance < amount) {
-            wait();
+            wait(1_000L);
+            System.out.println(ColorANSI.YELLOW.fillColor("+" + getBalance()));
         }
         balance -= amount;
     }
