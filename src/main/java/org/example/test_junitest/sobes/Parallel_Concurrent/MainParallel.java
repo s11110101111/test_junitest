@@ -3,7 +3,7 @@ package org.example.test_junitest.sobes.Parallel_Concurrent;
 import org.example.test_junitest.sobes.enum_test.ColorANSI;
 
 public class MainParallel {
-    private static int count = 0;
+    private static  int count = 0;
 
     public static void main(String[] args) {
         //test1();

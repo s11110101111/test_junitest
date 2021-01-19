@@ -6,7 +6,9 @@ public class Demo2 {
         Thread sleeper = new SleeperThread();
 
         System.out.println("Starting threads");
+        worker.setDaemon(true);
         worker.start();
+        sleeper.setDaemon(true);
         sleeper.start();
     Thread.sleep(1000);
 
