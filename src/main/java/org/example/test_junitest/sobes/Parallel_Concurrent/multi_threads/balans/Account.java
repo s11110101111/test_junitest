@@ -2,32 +2,38 @@ package org.example.test_junitest.sobes.Parallel_Concurrent.multi_threads.balans
 
 public class Account {
 
-    private /*volatile*/ long balance;
+    private long balance;
 
-    public Account()
-    {
+    public Account() {
         this(0L);
     }
 
-    public Account(long balance)
-    {
+    public Account(long balance) {
         this.balance = balance;
     }
 
-    public long getBalance()
-    {
+    public synchronized long getBalance() {
         return balance;
     }
 
     public synchronized void deposit(long amount) {
         checkAmountNonNegative(amount);
         balance += amount;
+        notifyAll();
     }
 
-    public  synchronized void withdraw(long amount) {
+    public synchronized void withdraw(long amount) {
         checkAmountNonNegative(amount);
         if (balance < amount) {
             throw new IllegalArgumentException("not enough money");
+        }
+        balance -= amount;
+    }
+
+    public synchronized void waitAndWithdraw(long amount) throws InterruptedException {
+        checkAmountNonNegative(amount);
+        while (balance < amount) {
+            wait();
         }
         balance -= amount;
     }

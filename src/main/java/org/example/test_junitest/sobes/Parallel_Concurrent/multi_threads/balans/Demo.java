@@ -2,42 +2,16 @@ package org.example.test_junitest.sobes.Parallel_Concurrent.multi_threads.balans
 
 import org.example.test_junitest.sobes.enum_test.ColorANSI;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Demo {
 
     public static void main(String[] args) throws Exception {
-        Account account = new Account(100_000);
-        System.out.println("Begin balance = " + account.getBalance());
+        Account account = new Account(0);
 
-        Thread withdrawThread = new WithdrawThread(account);
-        Thread depositThread = new DepositThread(account);
-        withdrawThread.start();
-        depositThread.start();
+        new DepositThread(account).start();
 
-        withdrawThread.join();
-        depositThread.join();
+        account.waitAndWithdraw(50000000);
 
-        System.out.println("End balance = " + account.getBalance());
-    }
-
-
-    private static class WithdrawThread extends Thread {
-
-        private final Account account;
-
-        private WithdrawThread(Account account) {
-            this.account = account;
-        }
-
-        @Override
-        public void run() {
-            for (int i = 0; i < 20_000; ++i) {
-                account.withdraw(1);
-                System.out.print(ColorANSI.RED.fillColor("-" + account.getBalance()));
-            }
-        }
+        System.out.println("waitAndWithdraw finished, end balance = " + account.getBalance());
     }
 
 
@@ -51,9 +25,8 @@ public class Demo {
 
         @Override
         public void run() {
-            for (int i = 0; i < 20_000; ++i) {
+            for (int i = 0; i < 60000000; ++i) {
                 account.deposit(1);
-                System.out.print(ColorANSI.YELLOW.fillColor("+" + account.getBalance()));
             }
         }
     }
