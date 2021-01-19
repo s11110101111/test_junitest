@@ -8,7 +8,7 @@ public class SemaphoreDemo {
 
 
     public static void main(String[] args) throws Exception {
-        Semaphore semaphore = new Semaphore(2);
+        Semaphore semaphore = new Semaphore(2, true);
 
         List<Thread> threads = new ArrayList<Thread>();
         for (int i = 0; i < 10; ++i) {
@@ -30,6 +30,7 @@ public class SemaphoreDemo {
         private final Semaphore semaphore;
 
         private DemoThread(Semaphore semaphore) {
+
             this.semaphore = semaphore;
         }
 
