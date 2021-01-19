@@ -42,7 +42,7 @@ public class ListThreads {
         @Override
         public void run() {
             try {
-                for (;;) {
+                for (; ; ) {
                     synchronized (LOCK) {
                         while (nextWorker != workerId) {
                             LOCK.wait();
@@ -60,9 +60,11 @@ public class ListThreads {
             }
         }
     }
-    public static class LockMonitor{
+
+    public static class LockMonitor {
         Object monitor;
-        public Object getMonitor(){
+
+        public Object getMonitor() {
             monitor = new Object();
             return monitor;
         }

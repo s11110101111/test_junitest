@@ -10,7 +10,7 @@ public class Demo2 {
         worker.start();
         sleeper.setDaemon(true);
         sleeper.start();
-    Thread.sleep(1000);
+        Thread.sleep(1000);
 
 //        System.out.println("Interrupting threads");
 //        worker.interrupt();

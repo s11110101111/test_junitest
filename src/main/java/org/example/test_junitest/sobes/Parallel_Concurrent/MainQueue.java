@@ -16,11 +16,11 @@ public class MainQueue {
             public void run() {
                 while (true) {
                     Runnable task = bQueue.get();
-                    System.out.println( "launch task in main ");
+                    System.out.println("launch task in main ");
                     task.run();
 
                 }
-           }
+            }
         });
         worker.start();
         for (int i = 0; i < 10; i++) {
