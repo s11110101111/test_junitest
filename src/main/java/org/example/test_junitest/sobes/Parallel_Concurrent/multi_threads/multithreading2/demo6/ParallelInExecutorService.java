@@ -16,9 +16,9 @@ public class ParallelInExecutorService {
 
         Future<Double> future1 = executor.submit(new PartialCalc(array, 0, array.length / 2));
         Future<Double> future2 = executor.submit(new PartialCalc(array, array.length / 2, array.length));
-
+        //future1.cancel(true);
         double sum = future1.get() + future2.get();
-
+future1.cancel(true);
         long endTime = System.currentTimeMillis();
 
         System.out.println("sum = " + sum);

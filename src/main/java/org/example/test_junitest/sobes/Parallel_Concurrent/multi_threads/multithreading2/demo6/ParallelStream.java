@@ -12,6 +12,8 @@ public class ParallelStream {
 
         double sum = Arrays.stream(array)
                 .parallel()
+                .sequential()
+                .peek(System.out::print)
                 .mapToDouble(Commons::function)
                 .sum();
 

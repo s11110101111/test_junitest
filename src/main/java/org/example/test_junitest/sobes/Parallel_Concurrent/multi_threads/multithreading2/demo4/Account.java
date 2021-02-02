@@ -1,5 +1,7 @@
 package org.example.test_junitest.sobes.Parallel_Concurrent.multi_threads.multithreading2.demo4;
 
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.VarHandle;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -7,7 +9,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Account {
 
     private final Lock lock = new ReentrantLock();
-    private final Condition balanceIncreased = lock.newCondition();
+    private final Condition   balanceIncreased = lock.newCondition();
+
 
     private long balance;
 
@@ -16,6 +19,7 @@ public class Account {
     }
 
     public Account(long balance) {
+
         this.balance = balance;
     }
 
