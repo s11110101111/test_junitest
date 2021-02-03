@@ -13,8 +13,8 @@ ParentGrandB.InnerStaticB  stIn = new ParentGrandB.InnerStaticB();
 //        Child1GrandB child1GrandB = new Child1GrandB();
 //        Child11GrandB child11GrandB1 = new Child11GrandB();
 //          parentGrandB.runPublic();
-var  icl = parentGrandB.new InnerClassGrandB();
-        icl.getName();
+//        var  icl = parentGrandB.new InnerClassGrandB();
+//        icl.getName();
     //        var iP =child1GrandB.new InnerClassChild1B();
 //        var iC1 = child11GrandB1.new InnerClassChild1B();
 //

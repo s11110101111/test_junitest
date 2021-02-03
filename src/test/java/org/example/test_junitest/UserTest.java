@@ -1,14 +1,14 @@
 package org.example.test_junitest;
 
 import lombok.SneakyThrows;
+import org.example.test_junitest.sobes.sex.Sex;
+import org.example.test_junitest.sobes.sex.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class UserTest {
     private User user;

@@ -34,7 +34,7 @@
        <!-- JavaConfig needed this library-->
         <dependency>
             <groupId>cglib</groupId>
-            <artifactId>cglib-parent</artifactId>
+            <artifactId>cglib</artifactId>
             <version>3.3.0</version>
         </dependency>
     <dependency>

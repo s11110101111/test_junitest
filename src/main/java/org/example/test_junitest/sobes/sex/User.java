@@ -1,4 +1,4 @@
-package org.example.test_junitest;
+package org.example.test_junitest.sobes.sex;
 
 import lombok.Getter;
 import lombok.Setter;

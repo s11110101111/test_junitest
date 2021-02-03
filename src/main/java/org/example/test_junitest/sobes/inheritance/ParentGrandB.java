@@ -44,7 +44,7 @@ static class InnerStaticB {
             class LocalCassB{
                int  loclcls =10;
             }
-        var  lc=   new LocalCassB();
+        LocalCassB  lc=   new LocalCassB();
 
 
         new InnerClassGrandB().getName();
