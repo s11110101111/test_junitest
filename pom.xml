@@ -20,6 +20,23 @@
         </plugins>
     </build>
     <dependencies>
+        <!-- dependency for sprig framework-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jcl</artifactId>
+            <version>5.2.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.8.RELEASE</version>
+        </dependency>
+       <!-- JavaConfig needed this library-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-parent</artifactId>
+            <version>3.3.0</version>
+        </dependency>
     <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
