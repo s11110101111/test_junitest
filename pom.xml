@@ -13,14 +13,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
         <!-- dependency for sprig framework-->
+        <!-- bridge for test lib  https://mvnrepository.com/artifact/org.springframework/spring-jcl -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jcl</artifactId>
@@ -31,6 +32,14 @@
             <artifactId>spring-context</artifactId>
             <version>5.2.8.RELEASE</version>
         </dependency>
+
+        <!-- Transaction api Transaction api https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.2.8.RELEASE</version>
+        </dependency>
+
        <!-- JavaConfig needed this library-->
         <dependency>
             <groupId>cglib</groupId>
@@ -59,16 +68,17 @@
         <artifactId>hibernate-core</artifactId>
         <version>5.4.20.Final</version>
     </dependency>
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>42.2.14</version>
-    </dependency>
 <!--    <dependency>-->
-<!--        <groupId>mysql</groupId>-->
-<!--        <artifactId>mysql-connector-java</artifactId>-->
-<!--        <version>8.0.23</version>-->
+<!--        <groupId>org.postgresql</groupId>-->
+<!--        <artifactId>postgresql</artifactId>-->
+<!--        <version>42.2.14</version>-->
 <!--    </dependency>-->
+
+        <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.23</version>
+    </dependency>
 </dependencies>
 
 

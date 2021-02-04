@@ -20,8 +20,10 @@ public class AppIOgen {
         List beans = Arrays.asList(context.getBeanDefinitionNames());
 
         beans.forEach(System.out::println);
-        IOutputGenerator iog = (IOutputGenerator) context.getBean("IOutput");
+        IOutputGenerator iog = (IOutputGenerator) context.getBean("JsonOutput");
         iog.generateOutput();
+        IOutputGenerator iog1 = (IOutputGenerator) context.getBean(IOutputGeneratorImpl.class);
+iog1.generateOutput();
     }
 
 }
