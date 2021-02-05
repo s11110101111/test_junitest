@@ -8,7 +8,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 @Component
 //@Service
 @Transactional
-public class UserService {
+public class UserService implements IUserService {
 
     @Autowired
     private MailService mailService;
