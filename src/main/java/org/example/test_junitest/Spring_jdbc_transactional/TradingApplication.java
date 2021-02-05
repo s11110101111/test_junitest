@@ -27,6 +27,8 @@ public class TradingApplication {
                 .forEach(System.out::println);
 
         UserService userService = ctx.getBean(UserService.class);
+        System.out.println(ColorANSI.RED.fillColor("Get Bean UserService name Type ="
+                + userService.getClass().getSimpleName()));
         userService.register(user);
 
         System.out.println("Transaction open? " + TransactionSynchronizationManager.isActualTransactionActive());
