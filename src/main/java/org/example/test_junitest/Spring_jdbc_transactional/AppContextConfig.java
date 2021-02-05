@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan()
-//@EnableTransactionManagement
+@EnableTransactionManagement
 public class AppContextConfig {
     @Bean
 //properties ... @value
