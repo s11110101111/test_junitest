@@ -1,7 +1,7 @@
-package org.example.test_junitest.config;
+package org.example.test_junitest.spring_framework.configs;
 
 import org.example.test_junitest.spring_framework.SuperHuman;
-import org.example.test_junitest.spring_framework.configs.InvisibleManImplSuperHuman;
+import org.example.test_junitest.spring_framework.InvisibleManImplSuperHuman;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

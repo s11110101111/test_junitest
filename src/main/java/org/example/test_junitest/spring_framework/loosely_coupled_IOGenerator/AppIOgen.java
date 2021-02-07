@@ -11,10 +11,10 @@ public class AppIOgen {
 
         OutputHelper helper = new OutputHelper();
         helper.generate();
-        appRuner();
+        appRunner();
     }
 
-    private static void appRuner() {
+    private static void appRunner() {
         ApplicationContext context = new AnnotationConfigApplicationContext(ConfigIO.class);
         ApplicationContext context1 = new AnnotationConfigApplicationContext(ConfigIO.class);
         List beans = Arrays.asList(context.getBeanDefinitionNames());

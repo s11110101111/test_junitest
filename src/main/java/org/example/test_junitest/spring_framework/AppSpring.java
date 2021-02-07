@@ -1,7 +1,6 @@
 package org.example.test_junitest.spring_framework;
 
-import org.example.test_junitest.config.ConfigApp1;
-import org.example.test_junitest.spring_framework.configs.InvisibleManImplSuperHuman;
+import org.example.test_junitest.spring_framework.configs.ConfigApp1;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

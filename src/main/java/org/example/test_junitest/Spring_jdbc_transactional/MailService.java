@@ -4,7 +4,7 @@ import org.example.test_junitest.sobes.enum_test.ColorANSI;
 import org.springframework.stereotype.Component;
 
 
-public class MailService {
+public class MailService  implements  IMailService{
     private String hostName;
     private String userName;
     private Integer port;
