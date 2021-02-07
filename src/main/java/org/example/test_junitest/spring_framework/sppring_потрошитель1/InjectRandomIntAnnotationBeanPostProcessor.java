@@ -20,6 +20,7 @@ private  int injectOk= 0;
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         //Обработем  все поля бина и вытащим анатацю и ее параметры
 //Еасли анатациия есть сгенрим случайное число на основе параметров
+        System.out.println("bpp  before scan - "+ bean );
         Field[] fields = bean.getClass().getDeclaredFields();
 
         for (Field field : fields) {
@@ -49,6 +50,7 @@ private  int injectOk= 0;
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println(ColorANSI.GREEN.fillColor("My InjectBPP injected - "+ injectOk
                 + " methods in " + beanName));
+        System.out.println("bpp  after scan - "+ bean );
 
         return null;
     }

@@ -12,10 +12,15 @@ import java.util.List;
 
 
 public class AppПотрошитель {
+
+   // https://youtu.be/BmBr5diz8WA
+
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ConfigApp1потрошитель.class);
-        Arrays.asList(context.getBeanDefinitionNames())
-                .stream().map(s->ColorANSI.PURPLE.fillColor(s)).forEach(System.out::println);
-        context.getBean(ITerminatorQuoter.class).sayQuote();
+    Arrays.asList(context.getBeanDefinitionNames())
+            .stream().map(s -> ColorANSI.PURPLE.fillColor(s)).forEach(System.out::println);
+
+    context.getBean(ITerminatorQuoter.class).sayQuote();
+
     }
 }

@@ -4,7 +4,7 @@ import org.example.test_junitest.sobes.enum_test.ColorANSI;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 
-@Profiling()
+@Profiling
 public class TerminatorQuoter implements ITerminatorQuoter {
     @InjectRandomInt(min = 2, max = 8)
     private int repit;
