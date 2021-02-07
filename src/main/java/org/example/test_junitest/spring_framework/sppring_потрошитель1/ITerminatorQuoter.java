@@ -4,4 +4,5 @@ public interface ITerminatorQuoter {
     //Цитатник терминатора
     void sayQuote();
 
+    void init();
 }
