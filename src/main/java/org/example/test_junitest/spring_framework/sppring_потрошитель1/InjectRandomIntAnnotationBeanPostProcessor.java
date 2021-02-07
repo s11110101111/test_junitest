@@ -1,12 +1,9 @@
 package org.example.test_junitest.spring_framework.sppring_потрошитель1;
 
-import javassist.tools.reflect.Reflection;
 import org.example.test_junitest.sobes.enum_test.ColorANSI;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
@@ -20,7 +17,7 @@ private  int injectOk= 0;
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         //Обработем  все поля бина и вытащим анатацю и ее параметры
 //Еасли анатациия есть сгенрим случайное число на основе параметров
-        System.out.println("bpp  before scan - "+ bean );
+        System.out.println("IRIAbpp  before scan - "+ bean );
         Field[] fields = bean.getClass().getDeclaredFields();
 
         for (Field field : fields) {
@@ -50,7 +47,7 @@ private  int injectOk= 0;
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println(ColorANSI.GREEN.fillColor("My InjectBPP injected - "+ injectOk
                 + " methods in " + beanName));
-        System.out.println("bpp  after scan - "+ bean );
+        System.out.println("IRIAbpp  after scan - "+ bean );
 
         return null;
     }

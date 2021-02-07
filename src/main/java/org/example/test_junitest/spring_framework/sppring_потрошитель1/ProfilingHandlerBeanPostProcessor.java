@@ -27,13 +27,13 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
             System.out.println("add in map " + bean + "// Class " + bean.getClass());
         }
         //вернем оригинальный бин
-        System.out.println("bpp  before scan - " + bean);
+        System.out.println("PHbpp  before scan - " + bean);
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("bpp scan after - " + bean);
+        System.out.println("PHbpp scan after - " + bean);
         //проверим елсли унас класс
         Class<?> beanClass = bean.getClass();
         if (beanClass != null) {
