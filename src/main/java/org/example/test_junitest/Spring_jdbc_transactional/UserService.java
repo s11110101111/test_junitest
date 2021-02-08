@@ -7,8 +7,8 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 @Component
 //@Service
-@Transactional
-public class UserService implements IUserService {
+@Transactional//implements IUserService
+public class UserService  {
 
     @Autowired
     private MailService mailService;
@@ -19,7 +19,7 @@ public class UserService implements IUserService {
 
     public void register(User user) {
 
-        System.out.println("Transaction open? " + TransactionSynchronizationManager.isActualTransactionActive());
+        System.out.println("Transaction open? "+ this.getClass() +" === " + TransactionSynchronizationManager.isActualTransactionActive());
 
         mailService.sendWelcomeEmail(user);
         userDao.save(user);

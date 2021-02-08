@@ -16,7 +16,7 @@ public class UserDAO {
 
     @Transactional
     public void save(User user){
-String strTrans = ColorANSI.GREEN.fillColor("Transactio open? " +
+String strTrans = ColorANSI.GREEN.fillColor("Transactio open? " + this.getClass() +" === "+
         TransactionSynchronizationManager.isActualTransactionActive());
         System.out.println(strTrans);
         System.out.println("Saving user to the DB via datasource " + dataSource

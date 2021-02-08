@@ -2,16 +2,16 @@ package org.example.test_junitest.Spring_jdbc_transactional;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-
+//implements InvocationHandler
 public class TransactionalInvocationHandler  implements InvocationHandler {
-    private final IUserService userService;
+    private final UserService userService;
 
-    public TransactionalInvocationHandler(IUserService userService) {
+    public TransactionalInvocationHandler(UserService userService) {
         this.userService = userService;
     }
 
 
-    @Override
+
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("Open up a database connection");
         Object result = method.invoke(userService, args);

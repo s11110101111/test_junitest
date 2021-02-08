@@ -26,7 +26,7 @@ public class TradingApplication {
         beanDefs.stream().map(s-> ColorANSI.GREEN.fillColor(s.toString()))
                 .forEach(System.out::println);
 
-        IUserService userService = ctx.getBean(IUserService.class);
+        UserService userService = ctx.getBean(UserService.class);
         System.out.println(ColorANSI.RED.fillColor("Get Bean UserService name Type ="
                 + userService.getClass().getSimpleName()));
         userService.register(user);
