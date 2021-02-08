@@ -1,5 +1,8 @@
 package org.example.test_junitest.sobes.char_string;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainStringApp {
     public static void main(String[] args) {
             String str = new String("ABCDFGHJ");
@@ -12,8 +15,12 @@ public class MainStringApp {
             c= (char) i;
             System.out.println("code "+i+" -> "  + c.toString() + " " +c.charValue());
 
+String str1 = "sdff sdfsd sdfdsfds dfsa sasasa sdfg";
+            int count =(int) Arrays.asList(str1.split(" ")).stream().filter(s -> s.length() == 4).count();
+            System.out.println(count);
 
         }
+
 
     }
 }

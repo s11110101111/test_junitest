@@ -40,7 +40,7 @@ private  int injectOk= 0;
         }
 
 
-        return null;
+        return bean;
     }
 
     @Override
@@ -49,6 +49,6 @@ private  int injectOk= 0;
                 + " methods in " + beanName));
         System.out.println("IRIAbpp  after scan - "+ bean );
 
-        return null;
+        return bean;
     }
 }

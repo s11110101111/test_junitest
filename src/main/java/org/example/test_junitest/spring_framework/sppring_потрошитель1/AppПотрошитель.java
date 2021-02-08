@@ -15,12 +15,14 @@ public class AppПотрошитель {
 
    // https://youtu.be/BmBr5diz8WA
 
+    //https://youtu.be/hDpa6m48eC4?t=2263
+
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ConfigApp1потрошитель.class);
     Arrays.asList(context.getBeanDefinitionNames())
             .stream().map(s -> ColorANSI.PURPLE.fillColor(s)).forEach(System.out::println);
 
-    context.getBean(ITerminatorQuoter.class).sayQuote();
+    //context.getBean(ITerminatorQuoter.class).sayQuote();
 
     }
 }
