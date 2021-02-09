@@ -25,6 +25,7 @@ public class AppContextConfig {
 public PlatformTransactionManager txManager(){
 
         return new DataSourceTransactionManager(dataSource());
+
 }
 
     @SneakyThrows
