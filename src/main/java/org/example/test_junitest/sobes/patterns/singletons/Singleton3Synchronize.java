@@ -1,4 +1,4 @@
-package org.example.test_junitest.sobes.singletons;
+package org.example.test_junitest.sobes.patterns.singletons;
 
 public class Singleton3Synchronize {
     private static  Singleton3Synchronize singleton;

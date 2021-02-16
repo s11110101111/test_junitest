@@ -1,4 +1,4 @@
-package org.example.test_junitest.sobes.singletons;
+package org.example.test_junitest.sobes.patterns.singletons;
 
 public class Singleton1Lazy {
     private static Singleton1Lazy singleton;
