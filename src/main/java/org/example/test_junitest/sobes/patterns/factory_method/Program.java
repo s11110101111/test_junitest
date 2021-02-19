@@ -10,6 +10,16 @@ public class Program {
         jDev.writeCode();
         jDev = new CPlusPlusDeveloper();
          jDev.writeCode();
+         //теперь через фабрику
+         DevelopersFactory df = new JavaDevelopersFactory();
+
+         jDev = df.createDeveloper();
+         jDev.writeCode();
+         df = new CPlusPlusDevelopersFactory();
+         jDev = df.createDeveloper();
+         jDev.writeCode();
+
+
     }
 
 }
