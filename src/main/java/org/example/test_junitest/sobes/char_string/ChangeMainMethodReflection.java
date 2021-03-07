@@ -1,6 +1,7 @@
 package org.example.test_junitest.sobes.char_string;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
@@ -42,8 +43,13 @@ static {
 //
 //            return null;
 //        });
+        Field modifiersField = Field.class.getDeclaredField( "modifiers" );
+        modifiersField.setAccessible( true );
+        modifiersField.setInt( fd, fd.getModifiers() & ~Modifier.FINAL );
 
-        fd.set(right, new String("123"));
+        //it updates a field, but it was already inlined during compilation...
+        fd.set( null, "I was updated!" );
+       // fd.set(right, new String("123"));
        // fd.set(right, new char[]{'R', 'i', 'g', 'h', 't'});
     } catch (Throwable e) {
         e.printStackTrace();
