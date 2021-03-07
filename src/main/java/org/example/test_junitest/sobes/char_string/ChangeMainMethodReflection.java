@@ -35,13 +35,15 @@ static {
         }
 
         fd.setAccessible(true);
+        System.out.println(fd.canAccess(right));
 //        AccessController.doPrivileged((PrivilegedAction) () -> {
 //            fd.setAccessible(true);
 //            System.out.println(fd.canAccess(right));
 //
 //            return null;
 //        });
-        fd.set(right, "123");
+
+        fd.set(right, new String("123"));
        // fd.set(right, new char[]{'R', 'i', 'g', 'h', 't'});
     } catch (Throwable e) {
         e.printStackTrace();
