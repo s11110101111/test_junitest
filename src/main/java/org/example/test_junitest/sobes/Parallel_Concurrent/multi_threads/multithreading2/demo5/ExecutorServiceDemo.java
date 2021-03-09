@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 public class ExecutorServiceDemo {
 
     public static void main(String[] args) throws Exception {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
 
         System.out.println("Submit worker 1");
         Future<String> future1 = executor.submit(new Worker("worker1"));
