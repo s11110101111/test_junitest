@@ -85,7 +85,7 @@ public class CallDispatcherSender {
         public void run() {
             Message msg;
             while (cycle || queueIncome.size() > 0) {
-                System.out.println(queueIncome.size() + "--------------------");
+                System.out.println("   queue incoming size -"+queueIncome.size() + "--------------------");
                 if ((msg = queueIncome.poll()) != null) {
                     try {
                         sendMessageTaxi(msg);
@@ -133,7 +133,7 @@ public class CallDispatcherSender {
                 try {
                     if ((msg = queueCalls.poll()) != null) {
                         Thread.sleep(3000);//   типа 3 минуты )
-                        System.out.println("Taxi id " + this.id + "save and work task: " + msg.toString());
+                        System.out.println("Taxi id " + this.id + " - save and work task: " + msg.toString());
                     } else {
                         //   System.out.println("Taxi id " + this.id + "queue is empty");
                         isNotTasks = true;
