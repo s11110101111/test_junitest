@@ -1,17 +1,18 @@
 package org.example.test_junitest.sobes.Parallel_Concurrent.multi_threads.multithreading2.taksi;
 
+
 import java.util.Map;
 import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.Callable;
+
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutionException;
 
 
 public class CallDispatcherSender {
     private final Map<Integer, Taxi> taxiStation;
     public final Queue<Message> queueIncome;
-    public final Queue<Message> queueMsgStart; //  очередь база для 1000 звонков
     private volatile boolean cycle = true; // сбросим как получим входящие
 
     public Map<Integer, Taxi> getTaxiStation() {
@@ -22,9 +23,10 @@ public class CallDispatcherSender {
         return queueIncome;
     }
 
-    CallDispatcherSender() {
+    CallDispatcherSender() throws InterruptedException, ExecutionException {
         taxiStation = new ConcurrentHashMap<>();
         queueIncome = new ConcurrentLinkedQueue();
+
         Thread dispatcher = new Thread(new CallDispatcher());
         fillList();
         dispatcher.start();
@@ -40,10 +42,10 @@ public class CallDispatcherSender {
         }
 
 
-
         while (true) {
             try {
                 Thread.sleep(200);
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -52,32 +54,15 @@ public class CallDispatcherSender {
 
     }
 
-    class UserCall implements Callable<String> {
-        Message mes;
-        String userName;
-UserCall(String nameUser){
-    this.userName= nameUser;
-}
-        @Override
-        public String call() throws Exception {
-            if (queueMsgStart.size() > 0) {
-                mes = queueMsgStart.poll();
-                queueIncome.add(mes);
-             return mes.toString();
-            }
-
-            return "No  incoming calls";
-        }
-    }
 
     void fillList() {
-        Queue<Message> queueMsgStart = new ConcurrentLinkedQueue<>();
+
         new Random()
                 .ints(100, 1, 10)
                 .forEach(a -> {
-                    queueMsgStart.add(new Message(a, "Message for " + a));
+                    queueIncome.add(new Message(a, "Message for " + a));
                 });
-        System.out.println("Created queue for user calls , size - " + queueMsgStart.size());
+        System.out.println("Created queue for user calls , size - " + queueIncome.size());
         cycle = false;
 
 
@@ -100,6 +85,7 @@ UserCall(String nameUser){
         public void run() {
             Message msg;
             while (cycle || queueIncome.size() > 0) {
+                System.out.println(queueIncome.size() + "--------------------");
                 if ((msg = queueIncome.poll()) != null) {
                     try {
                         sendMessageTaxi(msg);
@@ -111,7 +97,7 @@ UserCall(String nameUser){
                     }
                 } else {
                     cycle = true;
-                    // System.out.println("CallDispatcher queueIncome is empty   ");
+                    System.out.println("CallDispatcher queueIncome is empty   ");
                 }
 
             }
@@ -160,7 +146,7 @@ UserCall(String nameUser){
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         new CallDispatcherSender();
 
     }
