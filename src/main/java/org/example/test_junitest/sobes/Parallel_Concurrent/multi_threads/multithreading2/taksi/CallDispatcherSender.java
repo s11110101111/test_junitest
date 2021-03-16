@@ -11,24 +11,15 @@ import java.util.concurrent.ExecutionException;
 
 
 public class CallDispatcherSender {
-    private final Map<Integer, Taxi> taxiStation;
-    public final Queue<Message> queueIncome;
-    private volatile boolean cycle = true; // сбросим как получим входящие
+    private final Map<Integer, Taxi> taxiStation = new ConcurrentHashMap<>();
+    private final Queue<Message> queueIncome = new ConcurrentLinkedQueue<>();
+    private volatile boolean cycle; // сбросим как получим входящие
 
-    public Map<Integer, Taxi> getTaxiStation() {
-        return taxiStation;
-    }
 
-    public Queue<Message> getQueueIncome() {
-        return queueIncome;
-    }
-
-    CallDispatcherSender() throws InterruptedException, ExecutionException {
-        taxiStation = new ConcurrentHashMap<>();
-        queueIncome = new ConcurrentLinkedQueue();
+    CallDispatcherSender() {
 
         Thread dispatcher = new Thread(new CallDispatcher());
-        fillList();
+        //fillQueueIncomingCalls();
         dispatcher.start();
         for (int i = 1; i <= 10; i++) {
             //start taxi thread
@@ -38,9 +29,8 @@ public class CallDispatcherSender {
             thTaxi.setDaemon(true);
             thTaxi.setName("Taxi" + i);
             thTaxi.start();
-
         }
-
+        fillQueueIncomingCalls();
 
         while (true) {
             try {
@@ -55,13 +45,13 @@ public class CallDispatcherSender {
     }
 
 
-    void fillList() {
+    void fillQueueIncomingCalls() {
 
         new Random()
                 .ints(100, 1, 10)
-                .forEach(a -> {
-                    queueIncome.add(new Message(a, "Message for " + a));
-                });
+                .parallel()
+                .forEach((a) -> queueIncome.add(new Message(a, "Message for " + a))
+                );
         System.out.println("Created queue for user calls , size - " + queueIncome.size());
         cycle = false;
 
@@ -75,7 +65,7 @@ public class CallDispatcherSender {
             if (taxiStation.size() > 0) {
                 tekTaxi = taxiStation.get(msg.id);
                 tekTaxi.queueCalls.add(msg);
-                tekTaxi.isNotTasks = false;
+                //  tekTaxi.isNotTasks =false;
             } else {
                 System.out.println("Taxi not online");
             }
@@ -84,8 +74,8 @@ public class CallDispatcherSender {
         @Override
         public void run() {
             Message msg;
-            while (cycle || queueIncome.size() > 0) {
-                System.out.println("   queue incoming size -"+queueIncome.size() + "--------------------");
+            while (true || cycle || queueIncome.size() > 0) {
+                System.out.println("   queue incoming size -" + queueIncome.size() + "--------------------");
                 if ((msg = queueIncome.poll()) != null) {
                     try {
                         sendMessageTaxi(msg);
@@ -98,6 +88,11 @@ public class CallDispatcherSender {
                 } else {
                     cycle = true;
                     System.out.println("CallDispatcher queueIncome is empty   ");
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             }
@@ -105,10 +100,6 @@ public class CallDispatcherSender {
         }
     }
 
-    protected class IncomingCall {
-        int id;
-        String text;
-    }
 
     class Taxi implements Runnable {
         int id;
@@ -121,22 +112,18 @@ public class CallDispatcherSender {
             System.out.println("Taxi created  id - " + i);
         }
 
-        public void setQueueCalls(Message message) {
-            queueCalls.add(message);
-
-        }
-
         @Override
         public void run() {
             Message msg;
-            while (isNotTasks || queueCalls.size() > 0) {
+            while (isNotTasks) {
                 try {
                     if ((msg = queueCalls.poll()) != null) {
-                        Thread.sleep(3000);//   типа 3 минуты )
+                        Thread.sleep(2000);//   типа 3 минуты )
                         System.out.println("Taxi id " + this.id + " - save and work task: " + msg.toString());
                     } else {
-                        //   System.out.println("Taxi id " + this.id + "queue is empty");
-                        isNotTasks = true;
+                        System.out.println("Taxi id " + this.id + "queue is empty");
+                        Thread.sleep(200);
+                        //  isNotTasks = true;
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -155,16 +142,6 @@ public class CallDispatcherSender {
     public static class Message {
         private int id;
         private String text;
-
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-
-        public void setText(String text) {
-            this.text = text;
-        }
 
         public Message(int id, String text) {
             this.id = id;
