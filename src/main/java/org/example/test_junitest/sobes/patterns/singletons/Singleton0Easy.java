@@ -7,6 +7,6 @@ public class Singleton0Easy {
         return singleton;
     }
 
-    public Singleton0Easy() {
+    private Singleton0Easy() {
     }
 }

@@ -1,12 +1,17 @@
 package org.example.test_junitest.sobes.sobec_example;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 public abstract class AbstractClassText {
     static int numObject;
 
     void initClass() {
         // Реализация метода
+        //Integer[] init = new Integer[256];
+       //return (x < y) ? -1 : ((x == y) ? 0 : 1); Integer.compare
+        //tring str = new String("ffjldjflds");
+        //
     }
 
     ;
