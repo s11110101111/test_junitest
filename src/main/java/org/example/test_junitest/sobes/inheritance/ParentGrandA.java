@@ -30,6 +30,14 @@ public class ParentGrandA implements InterfaceGrandA {
 
 
     @Override
+    public void foo() {
+             System.out.println("Foo method grantA x = " + x );
+    }
+    public void methodInfGrandA(double dd) {
+        System.out.println("+++++++ =================\ncal method InfGrandA overLoad " + this.getClass());
+        System.out.println(methodStringGrandA());
+    }
+    @Override
     public void methodInfGrandA() {
         System.out.println("+++++++ \ncal method InfGrandA " + this.getClass());
         System.out.println(methodStringGrandA());

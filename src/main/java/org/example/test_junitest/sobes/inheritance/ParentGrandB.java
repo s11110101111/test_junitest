@@ -1,6 +1,6 @@
 package org.example.test_junitest.sobes.inheritance;
 
-public class ParentGrandB implements InterfaceGrandB {
+public class ParentGrandB implements InterfaceGrandB , InterfaceGrandA {
     {
         System.out.println("create ParentGrandB " + this);
     }
@@ -66,6 +66,21 @@ static class InnerStaticB {
 
     }
 
+
+    @Override
+    public void foo() {
+        System.out.println("Foo method grand FOO  = "+ InterfaceGrandB.x +"///"+  InterfaceGrandA.x);
+    }
+
+    @Override
+    public void methodInfGrandA() {
+        System.out.println("method grandA = "+ InterfaceGrandA.x);
+    }
+
+    @Override
+    public String methodStringGrandA() {
+        return "methos methodStringGrandA ";
+    }
 
     @Override
     public void methodInfGrandB() {
