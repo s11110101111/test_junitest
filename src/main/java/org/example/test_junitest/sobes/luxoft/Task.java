@@ -1,19 +1,26 @@
 package org.example.test_junitest.sobes.luxoft;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Task {
 
+public static void reduplicateSetCollection(int[] input){
 
+    Set<Integer> set = Arrays.stream(input).boxed().collect(Collectors.toSet());
+
+    int i=0;
+    for (Integer element: set){
+        if (i != 0) System.out.print(", ");
+        System.out.print(element);
+        i=1;
+    }
+}
     public static void removeDuplicateSet(int[] input) {
         Set<Integer> set = new HashSet<>();
         int sizeInput = input.length;
@@ -23,12 +30,13 @@ public class Task {
         StringBuilder sb = new StringBuilder();
         String prefix = "";
 
+
         for (Integer element : set) {
             sb.append(prefix);
             prefix = ", ";
             sb.append(element);
         }
-
+        System.out.println(sb.toString());
 
     }
 
@@ -69,6 +77,10 @@ public class Task {
     public static void main(String[] args) {
         int[] input = {1, 2, 34, 17, 1, 45, 12, 1, 17};
         getDuplicate(input);
+        System.out.println("--------------------1");
+        removeDuplicateSet(input);
+        System.out.println("--------------------2");
+        reduplicateSetCollection(input);
 
     }
 }
