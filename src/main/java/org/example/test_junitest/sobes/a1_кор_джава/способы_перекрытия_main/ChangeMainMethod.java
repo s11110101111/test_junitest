@@ -1,4 +1,4 @@
-package org.example.test_junitest.sobes.char_string;
+package org.example.test_junitest.sobes.a1_кор_джава.способы_перекрытия_main;
 
 public class ChangeMainMethod {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.example.test_junitest.sobes.char_string;
+package org.example.test_junitest.sobes.a2_кор_джава.ввод_вывод_инпутстрим;
 
 import java.io.BufferedReader;
 import java.io.IOException;

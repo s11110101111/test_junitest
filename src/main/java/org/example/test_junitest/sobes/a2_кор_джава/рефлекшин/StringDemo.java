@@ -1,4 +1,4 @@
-package org.example.test_junitest.sobes.char_string;
+package org.example.test_junitest.sobes.a2_кор_джава.рефлекшин;
 
 import java.lang.reflect.Field;
 
@@ -9,12 +9,14 @@ public class StringDemo {
 
     public static void main(String[] args) {
 
-        People p = new People();
-        System.err.println(p.str);//123
+       People p = new People();
+       System.err.println(p.str);//123
         try {
+
             Field field = People.class.getDeclaredField("str");
             field.setAccessible(true);
             field.set(p,"0");
+
             System.err.println(p.str);//0
         } catch (Exception e) {
             e.printStackTrace();
