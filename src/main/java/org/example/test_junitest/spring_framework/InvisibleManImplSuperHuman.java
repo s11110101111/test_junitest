@@ -1,9 +1,6 @@
 package org.example.test_junitest.spring_framework;
 
-import org.example.test_junitest.sobes.enum_test.ColorANSI;
-import org.example.test_junitest.spring_framework.SuperHuman;
-
-import javax.persistence.Column;
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
 
 public class InvisibleManImplSuperHuman implements SuperHuman {
    private String name= "InvisibleMan";

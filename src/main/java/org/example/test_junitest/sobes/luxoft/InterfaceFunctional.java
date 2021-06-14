@@ -4,6 +4,7 @@ import java.util.function.Function;
 @FunctionalInterface
 public interface InterfaceFunctional {
     void methodFun1(String sss);
+
     default void methodFunDef(String sss){
         System.out.println("def functional method methodFunDef");
     }

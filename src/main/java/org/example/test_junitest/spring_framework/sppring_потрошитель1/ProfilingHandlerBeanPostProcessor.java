@@ -1,6 +1,6 @@
 package org.example.test_junitest.spring_framework.sppring_потрошитель1;
 
-import org.example.test_junitest.sobes.enum_test.ColorANSI;
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

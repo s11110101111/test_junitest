@@ -1,14 +1,11 @@
 package org.example.test_junitest.spring_framework.sppring_потрошитель1;
 
-import org.example.test_junitest.sobes.enum_test.ColorANSI;
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
 import org.example.test_junitest.spring_framework.configs.ConfigApp1потрошитель;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
 
 import java.util.Arrays;
-import java.util.List;
 
 
 public class AppПотрошитель {

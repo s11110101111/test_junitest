@@ -1,7 +1,7 @@
 package org.example.test_junitest.Spring_jdbc_transactional;
 
 
-import org.example.test_junitest.sobes.enum_test.ColorANSI;
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
 
 
 public class User {

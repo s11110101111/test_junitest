@@ -24,7 +24,9 @@ public static void reduplicateSetCollection(int[] input){
     public static void removeDuplicateSet(int[] input) {
         Set<Integer> set = new HashSet<>();
         int sizeInput = input.length;
+
         Arrays.stream(input).forEach((s) -> set.add(s));
+        set.stream().forEach(element -> System.out.println(element));
         if (set.size() == sizeInput)
             System.out.println("нет повторов в массиве)");
         StringBuilder sb = new StringBuilder();

@@ -1,6 +1,6 @@
 package org.example.test_junitest.sobes.bitwise_bit_shift_operators;
 
-import org.example.test_junitest.sobes.enum_test.ColorANSI;
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
 
 public class MainBitApp {
     public static void main(String[] args) {

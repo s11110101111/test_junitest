@@ -1,7 +1,6 @@
 package org.example.test_junitest.sobes.patterns.builder;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-import org.example.test_junitest.sobes.enum_test.ColorANSI;
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
 
 import java.util.ArrayList;
 import java.util.List;
