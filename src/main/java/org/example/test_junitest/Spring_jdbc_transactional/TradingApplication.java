@@ -6,6 +6,8 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Thanks for watching this episode! If you want to, drop me a line to info@marcobehler.com.
@@ -15,7 +17,6 @@ public class TradingApplication {
     public static void main(String[] args) {
         User user = new User("Hans", "hans@forest.de");
         System.out.println("user.getEmail() = " + user.getEmail());
-
 
         System.out.println("Transaction open? " + TransactionSynchronizationManager.isActualTransactionActive());
 

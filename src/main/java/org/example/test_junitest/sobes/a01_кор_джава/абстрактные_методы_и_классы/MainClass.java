@@ -6,7 +6,10 @@ public class MainClass {
     public static void main(String[] args) throws Exception {
 
         MyInterface myInterface = new НаследникОтАбстрактногКлассасИнтерфейсом();
-        myInterface.defInterfaceMethod();
+        MyAbstractClass meA = new НаследникОтMyAbstractClass();
+        meA.setPrivateName("Наследник абстракт для передачи в деф метор");
+
+        myInterface.defInterfaceMethod(meA);
         myInterface.interfaceMethod();
         System.out.println("мы можем к ней обратиться - " + MyInterface.availableOnlyInInterface);
         System.out.println("мы можем к ней обратиться - " + MyInterface.availableStaticInInterface );
