@@ -1,0 +1,21 @@
+# docker compose
+version: '3'
+services:
+  db-test-api:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5445:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: test_api
+
+
+#to run terminal
+# docker-compose --version
+# docker-compose -f compose-env.yaml up
+# run as daemon
+#docker-compose -f compose-env.yaml up -d
+#удалить
+
