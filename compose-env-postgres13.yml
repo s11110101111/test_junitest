@@ -1,16 +1,17 @@
 # docker compose
-version: '3'
+version: "3.7"
 services:
-  db-test-api:
-    image: postgres:13
-    restart: always
+  postgresql:
+    image: postgres:13.2
+#    restart: always
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
     ports:
       - 5445:5432
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: test_api
-
+      POSTGRES_DB: test13
 
 #to run terminal
 # docker-compose --version
