@@ -12,12 +12,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BigDecimalTaskTest {
     private BigDecimalTask bgt = TestHelper.getInstance(BigDecimalTask.class);
-    String[] bigElements = {"9","-100","50","0","56.6","90","0.12",".12","02.34","000.000"};
-    // первый элемент количество элементов в массиве
-    @BeforeEach
-    void setUp() {
-
-    }
+    String[] bigElements = {"-100","50","0","56.6","90","0.12",".12","02.34","000.000"};
+    //  по условию задачи сперва вводится номер количества вводов сканера в массисв,
+    //  но мы обработаем уже готовый массив строк с цифрами
 
     @Test
     void runBigDecimal() {
