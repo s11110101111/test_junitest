@@ -53,7 +53,8 @@ public class MainRegExp {
 
         public static void clearDuplicates() {
 
-            String regex = "(?i)\\b([a-z]+)\\b(?:\\s+\\1\\b)+";
+           // String regex = "(?i)\\b([a-z]+)\\b(?:\\s+\\1\\b)+"; Это с именованной группой и по пробелу между словами
+            String regex = "\\b(\\w+)(?:\\W+\\1\\b)+"; //отделит слова по непечатным символам
             Pattern p = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
 
             Scanner in = new Scanner(System.in);
