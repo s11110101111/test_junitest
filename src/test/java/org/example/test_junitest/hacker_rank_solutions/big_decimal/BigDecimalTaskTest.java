@@ -3,13 +3,14 @@ package org.example.test_junitest.hacker_rank_solutions.big_decimal;
 import org.example.test_junitest.test_helper.TestHelper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-
+@DisplayName("HackerRank solution BigDecimal task.")
 class BigDecimalTaskTest {
     private BigDecimalTask bgt = TestHelper.getInstance(BigDecimalTask.class);
     String[] bigElements = {"-100","50","0","56.6","90","0.12",".12","02.34","000.000"};
@@ -17,6 +18,7 @@ class BigDecimalTaskTest {
     //  но мы обработаем уже готовый массив строк с цифрами
 
     @Test
+
     void runBigDecimal() {
         bgt.runBigDecimal(bigElements);
         String actualString = Arrays.toString(bigElements);
