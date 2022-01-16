@@ -1,15 +1,12 @@
 package org.example.test_junitest.hacker_rank_solutions.big_decimal;
 
 import org.example.test_junitest.test_helper.TestHelper;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("HackerRank solution BigDecimal task.")
 class BigDecimalTaskTest {
