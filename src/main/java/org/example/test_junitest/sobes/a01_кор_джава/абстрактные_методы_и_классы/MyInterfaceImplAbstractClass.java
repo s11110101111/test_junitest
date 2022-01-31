@@ -8,4 +8,5 @@ public abstract class MyInterfaceImplAbstractClass implements MyInterface {
         System.out.println("вызов обычного метода  абстактного класса импл мой интерфейс");
     }
 
+
 }

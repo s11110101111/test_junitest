@@ -24,4 +24,7 @@ public enum ColorANSI {
 
         return getColor() + message +RESET.getColor();
     }
+    public void printLn(String message){
+        System.out.println(getColor() + message +RESET.getColor());
+    }
 }

@@ -1,15 +1,10 @@
 package org.example.test_junitest.sobes.a51_многопоточность_concurrent.способысоздания_потоков;
 
-import javassist.bytecode.analysis.Executor;
-import lombok.SneakyThrows;
-
 import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class СпособыСозданияИЗапускаПотоков {
     public static  Integer count = 0;

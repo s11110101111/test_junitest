@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertThrows;
 
 public class TestLambdaTest {
@@ -19,7 +20,7 @@ public class TestLambdaTest {
         Assert.assertEquals(0,comp.compare(0,0));
         Assert.assertEquals(1,comp.compare(100,99));
         Assert.assertEquals(-1, comp.compare(99,100));
-
+assertThat(comp.compare(11,12)).isEqualTo(-1);
     }
     @Test
     public void testException(){

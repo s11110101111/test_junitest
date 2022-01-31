@@ -1,5 +1,7 @@
 package org.example.test_junitest.stream_api;
 
+import org.example.test_junitest.sobes.a01_кор_джава.enum_test.ColorANSI;
+
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
@@ -32,5 +34,6 @@ public class Example_stream_Tasks {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(getUniqueValue(new int[]{1,2,3,5,6,11,8},new int[]{1,2,3,2,6,8,10})));
+        ColorANSI.PURPLE.printLn(Arrays.toString(getUniqueValue(new int[]{1,2,3,5,6,11,8},new int[]{1,2,3,2,6,8,10})));
     }
 }
