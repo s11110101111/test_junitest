@@ -33,14 +33,6 @@ System.out.println("do Some usual2");
 System.out.println("do Some usual3");
 }
 }
-很有名 の weblog
-runnable.run
-Svyatoslav Panifidkin
-Svyatoslav Panifidkin 13:38
-
-Всеволод Волгин
-Самим надо решать)
-Это я и решил
 
 задача 2(template method)
 вариант 2

@@ -6,8 +6,6 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Thanks for watching this episode! If you want to, drop me a line to info@marcobehler.com.
@@ -22,7 +20,7 @@ public class TradingApplication {
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppContextConfig.class);
         AnnotationConfigApplicationContext ctx1 = new AnnotationConfigApplicationContext(AppContextConfig.class);
-        List beanDefs= Arrays.asList(ctx1.getBeanDefinitionNames());
+        List<String> beanDefs= Arrays.asList(ctx1.getBeanDefinitionNames());
         System.out.println("список зарегитрированных bean Definition=======BeanDefinitions");
         beanDefs.stream().map(s-> ColorANSI.GREEN.fillColor(s.toString()))
                 .forEach(System.out::println);

@@ -1,7 +1,9 @@
 package org.example.test_junitest.sobes.classes_methods;
 
+import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class MainCarInsurance {
@@ -14,16 +16,34 @@ public class MainCarInsurance {
         int premium = current.premium();
 
         // Статическое связывание на основе класса
-        String category = current.category();
+        String category = Insurance.category();
 
         System.out.println("premium : " + premium);
         System.out.println("category : " + category);
-
+FirstStaticClass.printSet();
 Collection c = new HashSet();
 Set hs = new HashSet<>();
-
+HashSet hsh = new HashSet();
         print(c);
         print(hs);
+        print(hsh);
+        print(new HashSet());
+        Set setnew = new AbstractSet() {
+            @Override
+            public Iterator iterator() {
+                return null;
+            }
+
+            @Override
+            public int size() {
+                return 0;
+            }
+        };
+    }
+    static class FirstStaticClass{
+        static void printSet(){
+            System.out.println("String FirstStaticClass");
+        }
     }
 
     public static void print(Collection c) {

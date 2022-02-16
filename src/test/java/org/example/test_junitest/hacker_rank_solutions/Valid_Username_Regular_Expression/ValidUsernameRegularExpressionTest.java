@@ -12,7 +12,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Valid Username Regular Expression task.")
 class ValidUsernameRegularExpressionTest {
-    private  ValidUsernameRegularExpression vunre = TestHelper.getInstance(ValidUsernameRegularExpression.class);
+    private final ValidUsernameRegularExpression vunre = TestHelper.getInstance(ValidUsernameRegularExpression.class);
     @ParameterizedTest
     @CsvSource( {
             "Julia, Invalid",
