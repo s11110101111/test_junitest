@@ -20,7 +20,7 @@ class TagContentExtractorTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-        "test:test",
+        "test:None",
         "<h1>Nayeem loves counseling</h1>:Nayeem loves counseling",
         "<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>:Sanjay has no watch So wait for a while",
         "<Amee>safat codes like a ninja</amee>:None",
@@ -28,6 +28,6 @@ class TagContentExtractorTest {
     }, delimiter = ':')
     void getTagContext(String tagInput, String expectedContext) {
         String result = tagContentExtractor.extractContent(tagInput);
-        Assertions.assertThat(tagInput).isEqualTo(expectedContext);
+        Assertions.assertThat(result).isEqualTo(expectedContext);
     }
 }
