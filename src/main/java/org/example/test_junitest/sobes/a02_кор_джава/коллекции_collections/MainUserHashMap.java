@@ -10,8 +10,8 @@ public class MainUserHashMap {
     public Set<String> setProduct = new HashSet<>();
     public static void main(String[] args) {
         MainUserHashMap main = new MainUserHashMap();
+        main.mapProduct.put(new String("продукт1"), "колбаса2");
         main.mapProduct.put("продукт1", "колбаса");
-        main.mapProduct.put("продукт1", "колбаса2");
         main.mapProduct.put(null , "колбаса2");
         main.mapProduct.put(null , null);
         main.mapProduct.put("продукт2", "сыр");
@@ -27,7 +27,8 @@ public class MainUserHashMap {
             System.out.println(set);
         }
 
-        main.mapProduct.entrySet().stream().forEach( (m)->System.out.println(m.getKey()+"|*|"+m.getValue()));
+        main.mapProduct.entrySet()
+            .forEach((m) -> System.out.println(m.getKey() + "|*|" + m.getValue()));
 
     }
 
