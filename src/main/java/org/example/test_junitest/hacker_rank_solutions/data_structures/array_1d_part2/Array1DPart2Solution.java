@@ -8,4 +8,5 @@ public interface Array1DPart2Solution {
 
     boolean canWin(int leap, int[] game);
 
+
 }
